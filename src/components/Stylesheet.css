@@ -1,3 +1,5 @@
+/* Special Styles of components */
+
 .imgProfile {
   max-width: 80px;
   padding: 5%;
@@ -24,7 +26,6 @@ p::first-letter {
   max-width: 500px;
 
 }
-
 
 .divFooter {
   padding: 20px;
