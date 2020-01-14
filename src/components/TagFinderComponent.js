@@ -4,32 +4,43 @@ import axios from 'axios';
 export default class TagFinderComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: '',  //input vacio
+    this.state = {value: '',  //input empty at the beginning
                   posts: []  }; 
-        
+         
     this.handleChange = this.handleChange.bind(this);   //input catches every letter
     this.handleSubmit = this.handleSubmit.bind(this);    //Enter works
   }
 
+  // GetRequest at the at the beginning of app with all posts
+  componentDidMount() { 
+    axios.get('https://n161.tech/api/dummyapi/post')
+    .then(res => {
+        this.setState({posts: res.data.data})
+    })
+    .catch ( error => {
+        console.log('error retreaiving data of all post')
+    })
+}
+
   handleChange(event) {                                 
     this.setState({value: event.target.value.toLowerCase()});    //input change into lowercase 
-    console.log('change', event.target.value);
   }
 
+  // GetRequest using navbar search  
   handleSubmit(event) {
     const url = 'https://n161.tech/api/dummyapi/tag';
     axios.get(`${url}`+ '/' + `${this.state.value}` + '/post')
         .then(res => {
-            console.log(res.data.data)
-            this.setState({posts: res.data.data})   //here comes the tag 'eg: interesting'
+            this.setState({posts: res.data.data})   //here comes data tag 'eg: interesting'
         })
         .catch ( error => {
-            console.log(error)
-            this.setState({errorMsg: 'error retreaiving data'})
+            console.log('error retreaiving data tags')
         })
 
-    event.preventDefault();           // prevent default and web refresh
+    event.preventDefault();              // prevent default, web refresh
   }
+
+  
 
   render() {
     return (
@@ -55,7 +66,7 @@ export default class TagFinderComponent extends Component {
 
                     <div className="row">
                     <div className="col 6 divProfile">
-                    <img className="imgProfile" style={{'borderRadius':'50%'}} src={post.owner.image}/>
+                    <img className="imgProfile " style={{'borderRadius':'50%'}} src={post.owner.image}/>
                     </div>
                     <div className="col 6">
                     <spam className="profileSpam">{post.owner.nameTitle}. {post.owner.firstName} {post.owner.lastName}</spam>
@@ -72,7 +83,7 @@ export default class TagFinderComponent extends Component {
                         <p>{post.message}</p>
                     </div>
 
-                    <div className="card-action">
+                    <div className="card-action ">
                         <a href="#">{post.tags[1]}</a>
                         <a href="#">{post.tags[2]}</a>
                         <a href="#">{post.tags[3]}</a>
