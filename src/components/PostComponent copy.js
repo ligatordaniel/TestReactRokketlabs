@@ -7,6 +7,7 @@ import './Stylesheet.css';
 class PostComponent extends Component {
     constructor(props) {
         super (props)
+
         this.state = {
             posts: []
         
@@ -24,14 +25,18 @@ class PostComponent extends Component {
         })
     }
 
+
+
     render() {
 
         return (
             <div>
 
+                          
                 {this.state.posts.map((post) => (
-
-                <div className="row cardPost" key={post.id}>
+                    
+                
+                <div className="row cardPost">
                     <div className="col s12 ">
                       <div className="card hoverable">
                         <div className="card-image">

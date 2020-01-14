@@ -12,8 +12,10 @@
   position: relative;
   top: 35px;
   left: 10%;
+}
 
-
+p::first-letter {
+  text-transform: capitalize;
 }
 
 .cardPost{
@@ -30,4 +32,6 @@
   margin-bottom: -20px;
   text-align: center;
 }
+
+
   
