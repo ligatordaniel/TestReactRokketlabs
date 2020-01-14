@@ -40,8 +40,8 @@ class PostComponent extends Component {
                         <div className="card-image">
 
                             <div className="row">
-                            <div class="col 6">
-                            <img className="imgProfile" src={post.owner.image}/>
+                            <div class="col 6 divProfile">
+                            <img className="imgProfile" style={{'borderRadius':'50%'}} src={post.owner.image}/>
                             </div>
                             <div class="col 6">
                             <spam class="profileSpam">{post.owner.nameTitle}. {post.owner.firstName} {post.owner.lastName}</spam>
