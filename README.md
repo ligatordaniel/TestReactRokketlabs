@@ -1,3 +1,34 @@
+*created by Daniel Ulloa jr front-end developer*
+
+***RokketLabs Test - Daniel Ulloa - Jr. Front-end developer***
+
+Similar to the view of Instagram, the application lets the user input any tags in a search bar and then shows all posts containing that specific tag. 
+
+***How to use it***
+
+*first of all. Clone the project*
+## `git clone https://github.com/ligatordaniel/TestReactRokketlabs.git`
+
+*Second. Install dependencies of the project (Don't forget to install nodeJS to use npm commands previously)*
+
+## `npm install`
+
+*third, run the project in your browser in localhost*
+
+## `npm start` 
+
+
+
+
+
+
+
+-----------------------------------------------o------------------------------------------------
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

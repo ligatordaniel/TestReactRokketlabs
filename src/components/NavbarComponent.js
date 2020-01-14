@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import PostComponent from './PostComponent';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};                         //input vacio
+    this.state = {value: ''};  //input vacio
 
-    this.handleChange = this.handleChange.bind(this);      //input catches every letter
-    this.handleSubmit = this.handleSubmit.bind(this);     //Enter works
+    this.handleChange = this.handleChange.bind(this);   //input catches every letter
+    this.handleSubmit = this.handleSubmit.bind(this);    //Enter works
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value.toLowerCase()});    //input change into lowercase
-    console.log(event.target.value);                    
+  handleChange(event) {                                 
+    this.setState({value: event.target.value.toLowerCase()});    //input change into lowercase 
+    console.log('change', event.target.value);
   }
 
   handleSubmit(event) {
-    event.preventDefault();   //cancela evento, no refrescar pagina
+    const url = 'https://n161.tech/api/dummyapi/tag';
+    axios.get(`${url}`+ '/' + `${this.state.value}` + '/post')
+        .then(res => {
+            console.log(res.data.data)
+
+        })
+        .catch ( error => {
+            console.log(error)
+            this.setState({errorMsg: 'error retreaiving data'})
+        })
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();           //cancela evento, no refrescar pagina
   }
 
   render() {
@@ -34,8 +46,9 @@ export default class Navbar extends Component {
           </div>
         </nav>
         <PostComponent tagName={this.state.tag}></PostComponent>
+      </div>
 
-      </div>      
+      
     );
   }
 }

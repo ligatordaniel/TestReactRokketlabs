@@ -28,7 +28,7 @@ class PostComponent extends Component {
 
         return (
             <div>
-
+                
                 {this.state.posts.map((post) => (
 
                 <div className="row cardPost" key={post.id}>
