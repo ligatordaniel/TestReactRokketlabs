@@ -1,0 +1,27 @@
+.imgProfile {
+  max-width: 80px;
+  padding: 5%;
+  border-radius: 50%;
+}
+
+.profileSpam {
+  font-size: 130%;
+  color: rgb(110, 110, 110);
+
+}
+
+.cardPost{
+  margin: auto;
+  margin-top: 20px;
+  max-width: 500px;
+
+}
+
+
+.divFooter {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  text-align: center;
+}
+  

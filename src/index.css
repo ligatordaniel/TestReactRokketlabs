@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(129, 129, 129);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(83, 83, 83);
 }
 
 code {
@@ -14,9 +14,4 @@ code {
     monospace;
 }
 
-.estiloComponente1{
-  background-color: teal;
-  margin: 2%;
-  padding: 5px;
-}
 
