@@ -1,8 +1,8 @@
-*created by Daniel Ulloa jr front-end developer*
+
 
 ***RokketLabs Test - Daniel Ulloa - Jr. Front-end developer***
 
-Similar to the view of Instagram, the application lets the user input any tags in a search bar and then shows all posts containing that specific tag. 
+Similar to the view of Instagram, this responsive application lets the user input any tags in a search bar and then shows all posts containing that specific tag. 
 
 ***How to use it***
 
